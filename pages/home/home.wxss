@@ -1,0 +1,440 @@
+/* 日期选择 */
+.date{
+  display: inline-block;
+  width: 100%；
+  height：140rpx;
+  background: white;
+  position: fixed;
+  z-index:3;
+}
+
+.day{
+  display: inline-block;
+  width: 150rpx;
+  height:140rpx;
+  color: #8c8c8c;
+  position: relative;
+  font-size: 0;
+  font-family: sans-serif;
+}
+
+.on{
+  color: #f22c25;
+  font-weight: bold;
+  border-bottom:#f22c25 solid 6rpx;
+  box-sizing: border-box; 
+}
+
+/* 周三 */
+.week{
+   display: inline-block;
+   width: 150rpx;
+   height:30rpx;
+   line-height: 30rpx;
+   font-size: 28rpx;
+   text-align: center;
+   letter-spacing: 4rpx; 
+   margin-top: 38rpx;
+}
+
+/* 2月26日 */
+.calendar{
+   display: inline-block;
+   width: 150rpx;
+   height: 22rpx;
+   line-height: 24rpx;
+   font-size: 22rpx;
+   text-align: center;
+   letter-spacing: 2rpx; 
+   margin-top:24rpx;
+}
+
+/* 选择地址 */
+.address{
+  width:100%;
+  height:76rpx;
+  background: white;
+  position: relative;
+  top:160rpx;
+}
+
+.addrIcon{
+  width:76rpx;
+  height: 76rpx;
+  float: left;
+}
+
+.addrIcon image{
+  position: relative;
+  top:20rpx;
+  left:46rpx;
+}
+
+
+
+.addrHolder{
+   display: inline-block;
+   font-size: 26rpx;
+   letter-spacing: 4rpx;
+   width: 300rpx;
+   height:76rpx;
+   line-height: 76rpx;
+   position: relative;
+   left: 26rpx;
+   color:#8b8b8b;
+   font-family: sans-serif;
+}
+
+.right{
+  width: 76rpx;
+  height: 76rpx;
+  float: right;
+  position: relative;
+}
+
+.right image{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top:50%;
+  margin-top:-16rpx;
+}
+
+
+/* 每日菜单 */
+.menu{
+  width:750rpx;
+  height: 100%;
+  position: relative;
+  font-size: 0;
+  top:160rpx;
+}
+
+/* 早餐部分 */
+.time{
+  width: 750rpx;
+  height: 80rpx;
+  padding-left: 165rpx;
+}
+
+.hrLeft{
+  width:80rpx;
+  height:2rpx;
+  background:#8b8b8b;
+  display: inline-block;
+  position: relative;
+  top:-5rpx;
+}
+
+.hrRight{
+  width:80rpx;
+  height:2rpx;
+  background:#8b8b8b;
+  display: inline-block;
+  position: relative;
+  top:-5rpx;
+}
+
+/* 时间段 */
+.slot{
+   width:260rpx;
+   height:80rpx;
+   font-size: 26rpx;
+   line-height: 80rpx;
+   color: #8b8b8b;
+   text-align: center;
+   display: inline-block;
+}
+
+/* 菜谱列表 */
+.foods{
+}
+
+.food{
+  width:750rpx;
+  background: white;
+  margin-bottom: 40rpx;
+}
+
+.foodLast{
+  width:750rpx;
+  background: white;
+}
+
+.foodImg{
+  margin-top:20rpx;
+  margin-left:15rpx;
+}
+
+/* 厨师 */
+.cooker{
+  width: 750rpx;
+  height:115rpx;
+  margin-top: 40rpx;
+}
+
+
+.cookImg{
+  width:112rpx;
+  height: 112rpx;
+  border-radius: 15rpx;
+  border:#d7d7d7 solid 2rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+
+.title{
+  height: 114rpx;
+  width: 400rpx;
+  margin-left: 22rpx;
+  float: left;
+}
+
+.foodName{
+  font-size: 28rpx;
+  font-weight: bold;
+  color:#333;
+  position: relative;
+  top:14rpx;
+  display: block;
+  letter-spacing: 2rpx;
+}
+
+.cookName{
+  font-size: 26rpx;
+  font-weight:lighter; 
+  color:#8b8b8b;
+  position: relative;
+  top:21rpx;
+}
+
+.slogan{
+  display: inline-block;
+  width: 300rpx;
+  height:34rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 26rpx;
+  font-weight:lighter; 
+  color:#8b8b8b;
+  position: relative;
+  top:28rpx;
+  white-space: nowrap;
+  margin-left: 20rpx;
+}
+
+/* 菜品简介 */
+.intro{
+  width: 650rpx;
+  height:auto;
+  margin-top: 40rpx;
+  border-left: #e1e1e1 solid 6rpx;
+  position: relative;
+  left:40rpx;  
+}
+
+.footTitle{
+  display: block;
+  width: 600rpx;
+  height:38rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 28rpx;
+  color:#323232;
+  white-space: nowrap;
+  margin-left: 26rpx;
+}
+
+
+/* 价格 加入购物车 */
+.select{
+  width:750rpx;
+  height:80rpx;
+  margin-top:48rpx;
+  position:relative;
+}
+
+.price{
+  width:300rpx;
+  height: 45rpx;
+  color: #8b8b8b;
+  font-size: 36rpx;
+  display: inline-block;
+  position: absolute;
+  left:42rpx;
+  top:13rpx;
+}
+
+.joinCart{
+  width: 204rpx;
+  height:72rpx;
+  display: inline-block;
+  background: #f22c25;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  color: white;
+  position: absolute;
+  right: 40rpx;
+}
+
+.controller{
+  width: 204rpx;
+  height:72rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  position: absolute;
+  right:30rpx;
+}
+/* - */
+.sub{
+  display: inline-block;
+  width:48rpx;
+  height:48rpx;
+  border-radius: 10rpx;
+  border:2rpx solid #f22c25;
+  text-align: center;
+  color: #f22c25;
+  font-size: 22rpx;
+  padding: 0;
+  top:-7rpx;
+  left:8rpx;
+  font-weight: bolder;
+  line-height: 48rpx;
+  position: absolute;
+  top:50%;
+  margin-top: -25rpx;
+}
+
+.num{
+  width: 90rpx;
+  height:72rpx;
+  font-size: 34rpx;
+  display: inline-block;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  left:50%;
+  margin-left: -45rpx;
+  font-family: sans-serif;
+}
+
+.add{
+  display: inline-block;
+  width:50rpx;
+  height:50rpx;
+  border-radius: 10rpx;
+  background: #f22c25;
+  text-align: center;
+  line-height: 45rpx;
+  color:white;
+  font-size: 38rpx;
+  padding: 0;
+  position: absolute;
+  top:50%;
+  margin-top: -25rpx;
+  left:140rpx;
+}
+
+.saleNum{
+  width: 750rpx;
+  height:80rpx;
+  font-size:24rpx;
+  color: #8b8b8b;
+  line-height: 80rpx;
+  text-align: right;
+}
+
+.sale{
+  margin-right: 40rpx;
+}
+
+.saleOut{
+  margin-right: 40rpx;
+}
+
+.foodNum{
+  display: inline-block;
+  color: #f22c25;
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
+
+
+/* 午餐 */
+.lunch{
+
+}
+
+
+/* 晚餐 */
+.dinner{
+
+}
+
+
+/* logo */
+.logo{
+  width:750rpx;
+  height: 120rpx;
+  background: white;
+  position: relative;
+  top:160rpx;
+}
+
+.logoImg{
+  width:60rpx;
+  height: 60rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30rpx;
+  margin-left: -30rpx;
+}
+
+
+/* 购物车 */
+.cart{
+  position: fixed;
+  left:40rpx;
+  bottom: 40rpx;
+  width: 114rpx;
+  height: 114rpx;
+  border-radius: 50%;
+  background: #f22c25;
+  z-index: 1;
+}
+
+.cartImg{
+  width:56rpx;
+  height: 56rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-top:-28rpx;
+  margin-left: -31rpx;
+}
+
+/* 采购的数量背景 */
+.cartbg{
+  width:38rpx;
+  height: 38rpx;
+  background: white;
+  border-radius: 50%;
+  border:3rpx solid #f22c25;
+  position: relative;
+  left:80rpx;
+  font-size: 0;
+}
+
+.buyNum{
+  width:38rpx;
+  height:38rpx;
+  display: inline-block;
+  color: #f22c25;
+  font-size: 22rpx;
+  line-height: 38rpx;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,219 @@
+<!-- home.wxml -->
+<view class="home">
+   <!-- 日期选择 -->
+   <view class="date">
+      <view data-key="0" class="day {{key==0?'on':''}}" bindtap="changeDay">
+        <text  class="week" data-key="0" >今天</text>
+        <text class="calendar" data-key="0">{{day[0].calendar}}</text>
+      </view>
+      <view data-key="1" class="day {{key==1?'on':''}}" bindtap="changeDay">
+        <text class="week" data-key="1">明天</text>
+        <text class="calendar" data-key="1">{{day[1].calendar}}</text>
+      </view>
+      <view data-key="2" class="day {{key==2?'on':''}}" bindtap="changeDay">
+        <text class="week" data-key="2">{{day[2].week}}</text>
+        <text class="calendar" data-key="2">{{day[2].calendar}}</text>
+      </view>
+      <view data-key="3" class="day {{key==3?'on':''}}" bindtap="changeDay">
+        <text class="week" data-key="3">{{day[3].week}}</text>
+        <text class="calendar" data-key="3">{{day[3].calendar}}</text>
+      </view>
+      <view data-key="4" class="day {{key==4?'on':''}}" bindtap="changeDay">
+        <text class="week" data-key="4">{{day[4].week}}</text>
+        <text class="calendar" data-key="4">{{day[4].calendar}}</text>
+      </view>
+   </view>
+   <!-- 选择收货地址 -->
+   <view class="address">
+    <view class="addrIcon">
+      <image style='width:38rpx;height:38rpx;'  src="../static/image/position.png" />  
+    </view>
+    <view class='addrHolder'>
+      请选择您所在的楼宇
+    </view> 
+    <view class='right'>
+    <image  src='../static/image/right.png' ></image>
+    </view>
+   </view>
+   <!-- 每日菜单 -->
+   <view class="menu">
+      <!-- 早餐 -->
+      <view class="breakfast" wx:if="{{day[key].breakfast.length!=0}}">
+        <!-- 时间标识 —— 早餐（7：00-9：00）——  -->
+        <view class="time">
+          <view class="hrLeft"></view>
+          <text class="slot" decode='true'> 早餐&ensp;(7:00-9:00)</text>
+          <view class="hrRight"></view>
+        </view>
+        <!-- 菜谱列表 -->
+        <view class="foods" >
+          <block wx:for="{{day[key].breakfast}}" wx:key="index">
+            <view class='{{index==(day[key].breakfast.length-1)?"foodLast":"food"}}' data-index="{{index}}">
+              <image class="foodImg" style="width:720rpx;height=540rpx;" src='{{item.foodImg}}'></image>
+              <!-- 厨师简介 -->
+              <view class="cooker">
+                <image class="cookImg" src='{{item.cook.cookImg}}' />
+                <view class="title">
+                  <text class="foodName">{{item.foodName}}</text>
+                  <text class='cookName'>{{item.cook.cookName}}</text>
+                  <text class='slogan'>{{item.cook.slogan}}</text>
+                </view>
+              </view>
+              <!-- 菜品简介 -->
+                <view class="intro">
+                  <text wx:if="{{item.foodTitle1!=''}}" class="footTitle" >{{item.foodTitle1}}</text>
+                  <text wx:if="{{item.foodTitle2!=''}}" class="footTitle" >{{item.foodTitle2}}</text>
+                  <text wx:if="{{item.foodTitle3!=''}}" class="footTitle" >{{item.foodTitle3}}</text>
+                </view>
+              <!-- 价格 加入购物车   -->
+              <view class="select">
+                <view class="price">
+                   {{item.foodPrice}}元
+                </view>
+                <block wx:if="{{item.purchaseNum==0}}">
+                  <button class='joinCart' data-slot="0" data-key="{{index}}" bindtap='add' disabled="{{item.foodNum==0}}">加入购物车</button>
+                </block>
+                <block wx:else>
+                  <view class="controller">
+                    <view class="sub" data-key="{{index}}" data-slot='0' bindtap='sub'>—</view>
+                    <input class="num" value='{{item.purchaseNum}}' type='number' data-key="{{index}}" data-slot='0'></input>
+                    <view class="add" data-key="{{index}}" data-slot='0' bindtap='add'>+</view>
+                  </view>
+                </block> 
+              </view>
+              <!-- 剩余多少份 -->
+              <view class='saleNum'>
+                <view wx:if="{{item.foodNum==0}}" class='saleOut'>售罄</view>
+                <view wx:else class='sale'>
+                   还有<view class='foodNum'>{{item.foodNum}}</view>份
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 午餐 -->
+      <view class="lunch" wx:if="{{day[key].lunch.length!=0}}">
+        <!-- 时间标识 —— 早餐（7：00-9：00）——  -->
+        <view class="time">
+          <view class="hrLeft"></view>
+          <text class="slot" decode='true'> 午餐&ensp;(9:00-13:00)</text>
+          <view class="hrRight"></view>
+        </view>
+        <!-- 菜谱列表 -->
+        <view class="foods" >
+          <block wx:for="{{day[key].lunch}}" wx:key="index">
+            <view class='{{index==(day[key].lunch.length-1)?"foodLast":"food"}}' data-index="{{index}}">
+              <image class="foodImg" style="width:720rpx;height=540rpx;" src='{{item.foodImg}}'></image>
+              <!-- 厨师简介 -->
+              <view class="cooker">
+                <image class="cookImg" src='{{item.cook.cookImg}}' />
+                <view class="title">
+                  <text class="foodName">{{item.foodName}}</text>
+                  <text class='cookName'>{{item.cook.cookName}}</text>
+                  <text class='slogan'>{{item.cook.slogan}}</text>
+                </view>
+              </view>
+              <!-- 菜品简介 -->
+                <view class="intro">
+                  <text wx:if="{{item.foodTitle1!=''}}" class="footTitle" >{{item.foodTitle1}}</text>
+                  <text wx:if="{{item.foodTitle2!=''}}" class="footTitle" >{{item.foodTitle2}}</text>
+                  <text wx:if="{{item.foodTitle3!=''}}" class="footTitle" >{{item.foodTitle3}}</text>
+                </view>
+              <!-- 价格 加入购物车   -->
+              <view class="select">
+                <view class="price">
+                   {{item.foodPrice}}元
+                </view>
+                <block wx:if="{{item.purchaseNum==0}}">
+                  <button class='joinCart' data-key="{{index}}">加入购物车</button>
+                </block>
+                <block wx:else>
+                  <view class="controller">
+                    <view class="sub" data-key="{{index}}">—</view>
+                    <input class="num" value='{{item.purchaseNum}}' type='number' data-key="{{index}}"></input>
+                    <view class="add" data-key="{{index}}">+</view>
+                  </view>
+                </block> 
+              </view>
+              <!-- 剩余多少份 -->
+              <view class='saleNum'>
+                <view wx:if="{{item.foodNum==0}}" class='saleOut'>售罄</view>
+                <view wx:else class='sale'>
+                   还有<view class='foodNum'>{{item.foodNum}}</view>份
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 晚餐 -->
+      <view class="dinner" wx:if="{{day[key].dinner.length!=0}}">
+        <!-- 时间标识 —— 早餐（16：30-21：00）——  -->
+        <view class="time">
+          <view class="hrLeft"></view>
+          <text class="slot" decode='true'> 晚餐&ensp;(16:30-21:00)</text>
+          <view class="hrRight"></view>
+        </view>
+        <!-- 菜谱列表 -->
+        <view class="foods" >
+          <block wx:for="{{day[key].dinner}}" wx:key="index">
+            <view class='food' data-index="{{index}}">
+              <image class="foodImg" style="width:720rpx;height=540rpx;" src='{{item.foodImg}}'></image>
+              <!-- 厨师简介 -->
+              <view class="cooker">
+                <image class="cookImg" src='{{item.cook.cookImg}}' />
+                <view class="title">
+                  <text class="foodName">{{item.foodName}}</text>
+                  <text class='cookName'>{{item.cook.cookName}}</text>
+                  <text class='slogan'>{{item.cook.slogan}}</text>
+                </view>
+              </view>
+              <!-- 菜品简介 -->
+                <view class="intro">
+                  <text wx:if="{{item.foodTitle1!=''}}" class="footTitle" >{{item.foodTitle1}}</text>
+                  <text wx:if="{{item.foodTitle2!=''}}" class="footTitle" >{{item.foodTitle2}}</text>
+                  <text wx:if="{{item.foodTitle3!=''}}" class="footTitle" >{{item.foodTitle3}}</text>
+                </view>
+              <!-- 价格 加入购物车   -->
+              <view class="select">
+                <view class="price">
+                   {{item.foodPrice}}元
+                </view>
+                <block wx:if="{{item.purchaseNum==0}}">
+                  <button class='joinCart' data-key="{{index}}">加入购物车</button>
+                </block>
+                <block wx:else>
+                  <view class="controller">
+                    <view class="sub" data-key="{{index}}">—</view>
+                    <input class="num" value='{{item.purchaseNum}}' type='number' data-key="{{index}}"></input>
+                    <view class="add" data-key="{{index}}">+</view>
+                  </view>
+                </block> 
+              </view>
+              <!-- 剩余多少份 -->
+              <view class='saleNum'>
+                <view wx:if="{{item.foodNum==0}}" class='saleOut'>售罄</view>
+                <view wx:else class='sale'>
+                   还有<view class='foodNum'>{{item.foodNum}}</view>份
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+   </view>
+   <!-- 购物车 -->
+   <view class='cart'>
+     <view>
+       <image class='cartImg' src='../static/image/cart.png'></image>
+       <view class="cartbg">
+         <text class="buyNum">0</text>
+       </view>
+     </view>
+   </view>
+   <!-- 底部logo -->
+   <view class='logo'>
+     <image class='logoImg' src='../static/image/logo.jpeg'></image>
+   </view>
+</view>
